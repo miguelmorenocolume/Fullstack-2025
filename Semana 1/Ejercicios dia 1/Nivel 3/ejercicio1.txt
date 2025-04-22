@@ -1,4 +1,0 @@
-Para leer datos desde la consola en Node.js, 
-se utiliza el módulo readline o el objeto process.stdin. 
-El módulo readline facilita la lectura de líneas de texto, mientras que process.stdin 
-proporciona acceso directo a la entrada estándar. 
