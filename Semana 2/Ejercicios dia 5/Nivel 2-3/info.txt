@@ -1,0 +1,9 @@
+Nivel 2: Calculadora funcional
+Dentro de tu proyecto Vite, crea una calculadora que permita al usuario realizar operaciones básicas: suma, resta, multiplicación y división.
+La interfaz debe incluir botones para los números y las operaciones.
+Muestra el resultado en pantalla después de cada operación.
+
+Nivel 3: Estilos y experiencia de usuario
+Aplica estilos con CSS o una librería que prefieras.
+Asegúrate de que el diseño sea responsive y usable desde dispositivos móviles.
+Añade detalles visuales como efectos al pulsar botones o transiciones suaves para mejorar la experiencia del usuario.
