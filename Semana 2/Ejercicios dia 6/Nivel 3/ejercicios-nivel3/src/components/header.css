@@ -1,0 +1,36 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;         
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #2a2929;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+}
+
+nav li {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+nav li:hover {
+    color: #007BFF;
+}

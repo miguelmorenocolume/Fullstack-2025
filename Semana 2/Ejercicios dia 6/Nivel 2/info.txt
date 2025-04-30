@@ -1,0 +1,3 @@
+Crea un componente Button.jsx que reciba el texto y la función onClick como props.
+Aplica estilos CSS o Tailwind para organizar el diseño de forma responsive usando Flexbox o Grid.
+Añade transiciones suaves al pasar el ratón sobre los botones.

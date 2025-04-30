@@ -1,0 +1,5 @@
+Guarda los cálculos realizados en un array y muestra una pequeña lista dentro de Calculator.
+Añade validaciones para evitar divisiones por cero.
+Añade props opcionales a los componentes para personalizar estilos desde el padre.
+Separa la lógica de operaciones matemáticas en un archivo aparte (utils/math.js) y reutilízala.
+Crea un componente Card.jsx que pueda usarse tanto en el Main como en otras partes del proyecto, pasando como props el título y el contenido.

@@ -1,0 +1,19 @@
+Nivel 1: Estructura básica
+Crea un nuevo proyecto de ReactJS usando ViteJS. Asegúrate de seleccionar la plantilla de React. Inicia el servidor (npm run dev) para comprobar que todo funciona.
+Crea un componente Header.jsx que reciba por props el nombre de la web y un array de enlaces. El header debe mostrar el título y un menú de navegación generado dinámicamente a partir del array.
+Crea un componente Main.jsx que contenga un mensaje de bienvenida. Dentro de Main debes importar y renderizar la Calculadora y una sección Section.jsx, donde el título y el contenido se pasen como props.
+Crea un componente Footer.jsx que reciba mediante props un mensaje personalizado de pie de página.
+
+Nivel 2: Componentes dinámicos
+Crea un componente Calculator.jsx que permita hacer operaciones de suma, resta, multiplicación y división. Usa useState para guardar los números y mostrar el resultado. Muestra también el último cálculo realizado.
+Crea un componente Button.jsx que reciba el texto y la función onClick como props.
+Añade eventos de clic en el Header que simulen navegación cambiando el contenido del Main.
+Aplica estilos CSS o Tailwind para organizar el diseño de forma responsive usando Flexbox o Grid.
+Añade transiciones suaves al pasar el ratón sobre los botones.
+
+Nivel 3: Mejoras de experiencia
+Guarda los cálculos realizados en un array y muestra una pequeña lista dentro de Calculator.
+Añade validaciones para evitar divisiones por cero.
+Añade props opcionales a los componentes para personalizar estilos desde el padre.
+Separa la lógica de operaciones matemáticas en un archivo aparte (utils/math.js) y reutilízala.
+Crea un componente Card.jsx que pueda usarse tanto en el Main como en otras partes del proyecto, pasando como props el título y el contenido.

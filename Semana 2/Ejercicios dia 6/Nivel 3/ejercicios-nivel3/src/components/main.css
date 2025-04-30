@@ -1,0 +1,13 @@
+.main {
+    margin: 0 auto;
+    margin-top: 24rem;
+    width: 75vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: rgb(42, 42, 44);
+}
