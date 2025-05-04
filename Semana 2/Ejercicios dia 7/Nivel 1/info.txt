@@ -1,0 +1,5 @@
+Nivel 1: Listas e interpolación básica
+Crea un componente ListaFrutas.jsx que reciba por props un array de frutas y lo muestre usando .map().
+Dentro del mismo componente, utiliza interpolación en JSX para mostrar el número total de frutas.
+Crea un componente ListaTareas.jsx que reciba por props un array de tareas (objetos con nombre y completada) y muestre una lista con el nombre de cada una.
+Muestra un mensaje en el componente ListaTareas si no hay tareas en el array (usando una condicional && o ternaria).
