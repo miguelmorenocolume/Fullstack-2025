@@ -1,0 +1,27 @@
+.articulo-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 12px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .articulo-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .articulo-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+    color: #333;
+  }
+  
+  .articulo-card p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  

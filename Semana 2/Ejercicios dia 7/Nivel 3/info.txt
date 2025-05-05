@@ -1,0 +1,5 @@
+Nivel 3: Katas de repetición y buenas prácticas
+Crea una kata donde se genere dinámicamente una lista de los 10 primeros números pares y se muestre en un componente NumerosPares.jsx.
+Crea una kata que recorra un array de objetos de alumnos (nombre, nota) y muestre solo los aprobados (nota >= 5) en un componente AlumnosAprobados.jsx.
+Crea un componente ListaUsuarios.jsx que reciba un array de usuarios y muestre su nombre. Usa key correctamente en el .map() para evitar advertencias.
+Refactoriza la lógica de filtrado en una función aparte y reutilízala en varios componentes para mantener el código limpio.

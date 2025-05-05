@@ -1,0 +1,5 @@
+Nivel 2: Condicionales y renderizado dinámico
+En ListaTareas.jsx, usa una ternaria para mostrar el texto “✅ Completada” o “❌ Pendiente” según el estado de cada tarea.
+Crea un componente ArticulosDestacados.jsx que reciba un array de artículos y solo muestre los que tengan destacado: true.
+Usa .map() para recorrer el array y renderizar un componente ArticuloCard.jsx que reciba el título y contenido como props.
+Añade un contador con useState en el componente principal que muestre cuántos artículos destacados hay actualmente.
