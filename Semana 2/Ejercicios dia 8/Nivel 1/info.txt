@@ -1,0 +1,4 @@
+Nivel 1: Map básico y renderizado de listas
+Dado el array ["Manzana", "Banana", "Cereza", "Durazno", "Fresa"], usa .map() en React para renderizar una lista <ul> con <li>.
+Dado el array de productos con nombre y precio, crea un componente <Producto /> y usa .map() para renderizar cada uno: [{ id: 1, nombre: "Laptop", precio: 1200 }, { id: 2, nombre: "Celular", precio: 800 }, { id: 3, nombre: "Tablet", precio: 500 }]
+Dado un array de usuarios con nombre, edad y ciudad, muestra los datos en una tabla HTML utilizando .map().

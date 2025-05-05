@@ -1,0 +1,6 @@
+Nivel 3: Combinación de .map() y .filter() con inputs dinámicos
+Crea una lista de frutas y permite al usuario añadir nuevas frutas con un input y un botón.
+Filtra productos por categoría seleccionada por el usuario:
+[{ id: 1, nombre: "Laptop", categoria: "Electrónica" }, { id: 2, nombre: "Camiseta", categoria: "Ropa" }, { id: 3, nombre: "Celular", categoria: "Electrónica" }, { id: 4, nombre: "Zapatos", categoria: "Ropa" }, { id: 5, nombre: "Audífonos", categoria: "Electrónica" }]
+Filtra personas menores de una edad seleccionada por el usuario y muestra cuántas cumplen la condición: [{ id: 1, nombre: "Ana", edad: 25 }, { id: 2, nombre: "Luis", edad: 47 }, { id: 3, nombre: "Carlos", edad: 32 }, { id: 4, nombre: "Marta", edad: 52 }, { id: 5, nombre: "Pedro", edad: 18 }]
+Usa 3 inputs para filtrar empleados por nombre, apellido y salario mayor a un valor: [ { id: 1, nombre: "Ana", apellido: "Mesa", salario: 2500 }, { id: 2, nombre: "Luis", apellido: "Garcia", salario: 1800 }, { id: 3, nombre: "Carlos", apellido: "Perez", salario: 3200 }, { id: 4, nombre: "Marta", apellido: "Gutierrez", salario: 2800 }, { id: 5, nombre: "Pedro", apellido: "Almedaba", salario: 1500 }]

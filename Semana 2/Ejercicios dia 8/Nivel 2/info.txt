@@ -1,0 +1,5 @@
+Nivel 2: Uso de .filter(), condicionales y formularios
+Filtra y muestra solo los productos que cuestan más de $700.
+Crea un input para filtrar en tiempo real un array de nombres: [{ id: 1, nombre: "Ana" }, { id: 2, nombre: "Luis" }, { id: 3, nombre: "Carlos" }, { id: 4, nombre: "Marta" }]
+Crea una lista de tareas donde cada tarea tenga un botón "Eliminar" que quite la tarea usando .filter(): [{ id: 1, texto: "Hacer ejercicio" }, { id: 2, texto: "Leer un libro" }, { id: 3, texto: "Aprender React" }]
+Muestra cuántas personas son mayores de 18 años en el siguiente array: [{ id: 1, nombre: "Ana", edad: 25 }, { id: 2, nombre: "Luis", edad: 17 }, { id: 3, nombre: "Carlos", edad: 22 }, { id: 4, nombre: "Marta", edad: 15 }]
