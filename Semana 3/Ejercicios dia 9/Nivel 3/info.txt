@@ -1,0 +1,3 @@
+Crea un componente Tarjeta que envuelva cualquier contenido pasado como children.
+Crea un componente Contenedor que muestre su children dentro de un <section>.
+Crea un componente Alerta que use children para mostrar un mensaje dentro de un <div> con algún estilo visual.

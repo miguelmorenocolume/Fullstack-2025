@@ -1,0 +1,21 @@
+.container {
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 2vh;
+}
+
+.container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}

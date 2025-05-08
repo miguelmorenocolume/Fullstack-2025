@@ -1,0 +1,5 @@
+Nivel 3: Eventos y reacciones
+Crea un formulario con un input y un botón que muestre el valor ingresado al enviarlo.
+Usa useEffect para detectar cuando el usuario presiona una tecla específica.
+Crea un botón que muestre una alerta al hacer clic (eventos en ReactJS).
+Cambia el color de un <div> al pasar el mouse sobre él (eventos en ReactJS).

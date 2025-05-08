@@ -1,0 +1,4 @@
+Nivel 1: Props simples
+Crea un componente Perfil que reciba nombre y edad como props y los muestre dentro de un <div>.
+Crea un componente Producto que reciba nombre y precio como props y los muestre en una lista <ul>.
+Crea un componente Saludo que reciba nombre como prop y muestre "Hola, {nombre}!" en un <h1>.

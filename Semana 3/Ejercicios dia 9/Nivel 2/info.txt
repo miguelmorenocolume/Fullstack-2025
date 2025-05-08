@@ -1,0 +1,4 @@
+Nivel 2: Funcionalidad y JSX
+Crea un componente Botón que reciba texto y onClick, y renderice un <button> que ejecute la función al hacer clic.
+Crea un componente Tarea que reciba texto y completada como props, y los muestre en un <p>. Usa estilos condicionales si completada es true.
+Crea un componente Avatar que reciba url como prop y lo renderice en una etiqueta <img>.

@@ -1,0 +1,5 @@
+Nivel 1: useState básico
+Crea un contador con useState que aumente un número aleatorio al hacer clic en un botón.
+Crea un botón que use useState para alternar entre los textos "Encendido" y "Apagado".
+Crea una lista donde puedas agregar elementos usando un botón y useState.
+Crea un campo de texto que actualice un useState al escribir (eventos en ReactJS).

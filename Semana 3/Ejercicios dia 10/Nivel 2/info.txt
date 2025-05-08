@@ -1,0 +1,5 @@
+Nivel 2: useEffect en montado o tiempo
+Usa useEffect para obtener datos de una API cuando el componente se monte.
+Usa useEffect para iniciar un temporizador que muestre los segundos transcurridos.
+Crea un contador que aumente automáticamente con un número aleatorio cada segundo usando useEffect.
+Cambia el color de fondo de la página cada 3 segundos usando useState y useEffect.
