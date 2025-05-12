@@ -1,0 +1,4 @@
+Nivel 2: Comportamientos visuales y dinámicos
+Crea una lista donde cada elemento pueda con un clic cambiar de texto y color.
+Crea una que aumente de tamaño y cambie de color al pasar el mouse.
+Crea una que aumente de tamaño al hacer clic en un botón.

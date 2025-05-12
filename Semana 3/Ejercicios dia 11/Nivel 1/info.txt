@@ -1,0 +1,4 @@
+Nivel 1: Interacciones básicas con eventos
+Crea un botón que cambie de color y texto entre y al hacer clic.
+Crea un div cuadrado que cambie entre , y según clic o doble clic.
+Crea un botón que active y desactive el en toda la página.

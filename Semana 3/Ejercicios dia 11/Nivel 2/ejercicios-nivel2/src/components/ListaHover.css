@@ -1,0 +1,21 @@
+.lista-hover {
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+}
+
+.item-hover {
+  padding: 12px 20px;
+  margin: 10px 0;
+  background-color: #dcdcdc;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.item-hover:hover {
+  background-color: #4a90e2;
+  color: white;
+  transform: scale(1.1);
+}
