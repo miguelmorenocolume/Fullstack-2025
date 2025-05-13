@@ -1,0 +1,4 @@
+Nivel 2: Interacciones y estilos dinámicos
+Hover con Inline Styles. Usa useState y los eventos onMouseEnter y onMouseLeave para cambiar el color del botón cuando el mouse pase sobre él.
+Combinación de Estilos. Define un baseStyle para botones y combina estilos con el operador ...spread.
+Estilos Responsivos con window.innerWidth. Crea un texto que cambie de color si el ancho de la ventana es menor o mayor a 600px.

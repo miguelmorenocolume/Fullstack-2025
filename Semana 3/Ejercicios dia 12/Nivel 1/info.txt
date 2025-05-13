@@ -1,0 +1,4 @@
+Nivel 1: Estilos con React
+Aplica Inline Styles. Crea un componente App con un título <h1> de color azul y un botón <button> con fondo verde.
+Usa un Objeto de Estilos. Crea un objeto llamado styles y úsalo para aplicar estilos al título y al botón.
+Estilos Dinámicos con useState. Crea un botón que cambie su color de fondo entre rojo y azul al hacer clic.
