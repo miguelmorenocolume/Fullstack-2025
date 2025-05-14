@@ -1,0 +1,4 @@
+Nivel 1: Componentes básicos con estilo y props
+Recrea el slider desde cero y añade estilo propio. Añade soporte para imágenes por prop.
+Recrea el carrusel desde cero y añade estilo propio. Añade soporte para imágenes por prop.
+Recrea el menú desde cero y añade estilo propio. Añade soporte para prop.

@@ -1,0 +1,15 @@
+Nivel 2: Comportamientos interactivos
+
+En el slider:
+Detener autoplay al interactuar con los botones.
+Permitir deslizar con mouse o touch.
+Evitar el salto al pasar de la primera a la última imagen.
+En el carrusel:
+Realizar autoplay que se detenga al interactuar con los botones.
+Permitir deslizar con mouse o touch.
+Evitar el salto hacia atrás y permitir bucle infinito.
+Número de imágenes visibles configurable por prop.
+En el menú:
+Hacer que funcionen los submenús.
+Añadir animaciones suaves.
+Estilo visualmente agradable.
