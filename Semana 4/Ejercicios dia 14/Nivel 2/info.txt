@@ -1,0 +1,9 @@
+Nivel 2: Manejo de estado y actualización automática
+
+Usar useState para manejar:
+Los datos del clima.
+El valor de la ciudad ingresada.
+El estado de error.
+Usar useEffect para:
+Realizar la solicitud a la API al cargar o cambiar la ciudad.
+Actualizar los datos automáticamente cada 5 minutos.

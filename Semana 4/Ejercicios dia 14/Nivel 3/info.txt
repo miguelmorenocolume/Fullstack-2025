@@ -1,0 +1,4 @@
+Nivel 3: Interacción y control manual
+Incluir un botón para actualizar manualmente los datos del clima.
+Asegurarse de limpiar el temporizador de setInterval en el useEffect para evitar fugas de memoria.
+Asegurar una buena experiencia de usuario con validaciones básicas y manejo de estados de carga.

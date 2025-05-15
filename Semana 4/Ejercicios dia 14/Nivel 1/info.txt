@@ -1,0 +1,5 @@
+Nivel 1: Funcionalidad básica
+Crear una aplicación React que muestre el clima de una ciudad usando una API externa.
+Permitir al usuario ingresar el nombre de una ciudad.
+Mostrar la temperatura actual, humedad y descripción del clima usando los datos de la API de OpenWeatherMap.
+Mostrar un mensaje de error si no se puede obtener la información (por ejemplo, ciudad no encontrada).
