@@ -1,0 +1,4 @@
+Nivel 3: Refactorización y reutilización de lógica
+Toma un componente existente hecho en JavaScript y migra el archivo a TypeScript. Tipa las props, estados y funciones.
+Crea un hook personalizado useToggle que devuelva un booleano y una función para alternar su estado. Úsalo en un botón que muestre "Activado" o "Desactivado".
+Crea una lista de usuarios que provenga de una prop con tipado adecuado. Renderiza cada usuario en un componente hijo con sus datos.

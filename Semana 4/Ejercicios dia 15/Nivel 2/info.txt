@@ -1,0 +1,8 @@
+Nivel 2: Manejo de estado y efectos
+
+Usar useState para:
+Guardar el valor del input.
+Almacenar la información del usuario.
+Controlar el estado de carga.
+Controlar posibles errores.
+Usar useEffect para realizar la solicitud a la API cuando se active la búsqueda.

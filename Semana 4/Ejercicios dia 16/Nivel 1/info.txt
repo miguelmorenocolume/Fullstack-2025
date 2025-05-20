@@ -1,0 +1,5 @@
+Nivel 1: Fundamentos y primer proyecto con TypeScript
+Crea un nuevo proyecto de React usando Vite con plantilla TypeScript.
+Verifica que el componente <App /> se renderiza correctamente.
+Crea un componente Saludo que reciba una prop llamada nombre de tipo string y muestre un saludo personalizado.
+Usa useState tipado para un contador que aumente su valor con un botón.

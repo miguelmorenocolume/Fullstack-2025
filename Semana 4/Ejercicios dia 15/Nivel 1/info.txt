@@ -1,0 +1,5 @@
+Nivel 1: Funcionalidad básica
+Crear una aplicación React que obtenga y muestre información de un usuario de GitHub.
+Permitir ingresar un nombre de usuario de GitHub en un campo de texto.
+Al hacer clic en un botón, realizar una solicitud a https://api.github.com/users/{usuario}.
+Mostrar: Avatar del usuario. Nombre. Cantidad de repositorios públicos.

@@ -1,0 +1,5 @@
+Nivel 3: Experiencia de usuario y validaciones
+Mostrar un mensaje o animación durante la carga.
+Mostrar un mensaje de error si el usuario no existe o hay problemas con la conexión.
+Validar que el campo no esté vacío antes de realizar la búsqueda.
+Limpiar los datos anteriores al hacer una nueva búsqueda.

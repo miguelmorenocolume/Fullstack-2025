@@ -1,0 +1,5 @@
+Nivel 2: Tipado en formularios, funciones y estados
+Crea un formulario con un campo de texto controlado que permita ingresar un nombre. Usa useState<string> y tipa correctamente los eventos onChange y onSubmit.
+Crea una función que reciba dos números como parámetros y devuelva su suma. Muestra el resultado en pantalla.
+Crea una lista de tareas que se renderice a partir de un estado tipo array de objetos { id: number, texto: string, completada: boolean }.
+Crea un componente UsuarioCard que reciba una prop tipo objeto con nombre, edad y activo. Usa el valor activo para cambiar el color de fondo del componente.
