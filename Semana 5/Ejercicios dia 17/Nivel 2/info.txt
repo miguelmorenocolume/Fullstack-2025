@@ -1,0 +1,3 @@
+Nivel 2: Temporizador y desplazamiento
+Crea un temporizador que cuente segundos al iniciar y se detenga con un botón. Usa useRef para guardar la referencia de setInterval.
+Diseña un contenedor con desplazamiento vertical. Agrega un botón que, al hacer clic, lleve automáticamente al final del contenido usando useRef.

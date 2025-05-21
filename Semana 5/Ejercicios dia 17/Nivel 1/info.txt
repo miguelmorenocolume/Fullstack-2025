@@ -1,0 +1,4 @@
+Nivel 1: Introducción a useRef
+Crea un componente con un botón y un campo de texto. Al hacer clic en el botón, usa useRef para enfocar automáticamente el campo de texto.
+Crea un contador con un botón de incremento. Muestra el número de renders usando useRef sin que este provoque re-renderizaciones.
+Haz un componente donde se muestre el contador actual y el anterior. Al presionar un botón, incrementa el contador y muestra el valor previo usando useRef.

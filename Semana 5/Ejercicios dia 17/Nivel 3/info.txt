@@ -1,0 +1,3 @@
+Nivel 3: Chat en vivo con scroll automático
+Crea un chat en vivo con desplazamiento automático. Cada vez que se envíe un mensaje, la ventana del chat hará scroll automáticamente hasta el último mensaje usando useRef.
+Muestra una lista de mensajes en un div. Al agregar un nuevo mensaje, el chat se desplazará automáticamente hasta el final. Utiliza useRef para evitar re-renderizaciones innecesarias.
