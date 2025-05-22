@@ -1,0 +1,4 @@
+Nivel 1: Contextos básicos en React
+Crea un contexto UserContext con un nombre de usuario y un componente que lo muestre.
+Crea un CounterContext con useState y botones para incrementar y decrementar el contador.
+Usa ThemeContext para alternar entre "light" y "dark" con un botón.

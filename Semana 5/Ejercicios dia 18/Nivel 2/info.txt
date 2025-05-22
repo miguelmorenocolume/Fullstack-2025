@@ -1,0 +1,3 @@
+Nivel 2: Contextos de configuración
+Crea LanguageContext con los idiomas "es" y "en", y un botón para cambiar entre ellos.
+Crea AuthContext con una propiedad isLoggedIn y un botón para iniciar o cerrar sesión.
