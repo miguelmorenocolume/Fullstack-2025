@@ -1,0 +1,3 @@
+Nivel 2: Rutas dinámicas con datos externos
+Crea una ruta /post/:id y carga un post desde jsonplaceholder.typicode.com.
+Si la ruta /post/:id falla, muestra un mensaje de error en ErrorPage.

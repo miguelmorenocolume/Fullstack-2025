@@ -1,0 +1,5 @@
+Nivel 3: Aplicación con rutas completas y manejo de errores
+Crea una nueva aplicación con manejo de errores y tres rutas:
+/ muestra un mensaje de bienvenida.
+/news muestra una lista de noticias simuladas.
+/news/:id muestra detalles de una noticia específica.
