@@ -1,0 +1,5 @@
+Nivel 3: Carrito de compras con Context
+Crea CartContext para gestionar un carrito de compras con productos
+El contexto debe contener una lista de productos (items) y funciones para agregar y eliminar productos.
+Crea un componente <ProductList /> que muestre productos con un botón "Agregar al carrito".
+Crea un componente <Cart /> que muestre los productos agregados y permita eliminarlos.
