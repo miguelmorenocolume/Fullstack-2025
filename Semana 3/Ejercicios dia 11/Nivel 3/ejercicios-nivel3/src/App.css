@@ -1,0 +1,67 @@
+:root {
+  --transition: background-color 0.5s ease, color 0.5s ease;
+  --font-color-light: #111;
+  --font-color-dark: #f5f5f5;
+  --bg-light: #ffffff;
+  --bg-dark: #121212;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.app.light {
+  background-color: var(--bg-light);
+  color: var(--font-color-light);
+}
+
+.app.dark {
+  background-color: var(--bg-dark);
+  color: var(--font-color-dark);
+}
+
+.app.animated {
+  transition: all 0.6s ease-in-out;
+}
+
+.app.static {
+  transition: none;
+}
+
+button {
+  margin: 1rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #ccc;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}

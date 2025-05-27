@@ -1,0 +1,17 @@
+Nivel 3: Aplicación completa con modos, animaciones y persistencia
+
+Crea una aplicación React que permita al usuario cambiar entre un y , y que tenga un botón para alternar entre un y un . El desafío incluirá:
+
+Modo Claro y Oscuro
+Usa useState para controlar si el modo es claro u oscuro.
+Cambia el fondo, color de texto y otros elementos según el modo.
+Implementa un botón que permita alternar entre ambos modos.
+Animación de Tema
+Crea una animación simple (por ejemplo, un cambio de tamaño o color gradual) que se active cuando el usuario seleccione el tema animado.
+Implementa otro botón para alternar entre el tema animado y el estático.
+Cuando el tema animado esté activo, cada vez que se cambie el modo (oscuro o claro), debe aplicarse una .
+Responsividad
+Asegúrate de que los cambios de tema se apliquen correctamente en dispositivos móviles y de escritorio.
+Usa en tu CSS para ajustar los estilos según el tamaño de pantalla.
+Persistencia del Tema
+Usa localStorage o sessionStorage para que el modo y el tema animado persistan incluso después de recargar la página.
