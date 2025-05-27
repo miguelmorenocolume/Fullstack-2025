@@ -1,0 +1,16 @@
+Nivel 3: App de Estilos Dinámicos con Modo Claro/Oscuro
+Crea una interfaz con React donde el usuario pueda:
+
+Cambiar entre Modo Claro y Oscuro:
+Usa useState para manejar el estado darkMode.
+Cambia dinámicamente el fondo y color del texto según el modo.
+El botón que alterna el modo cambia de color dependiendo del estado actual.
+Ajustar el Tamaño del Texto:
+Usa useState para manejar el tamaño de fuente fontSize.
+Añade dos botones para aumentar o disminuir el tamaño del texto (+2px o -2px).
+El tamaño mínimo permitido es 12px.
+Uso de ...spread para reutilizar estilos:
+Define un estilo base buttonStyle para los botones.
+Usa el operador ... para extender y personalizar los estilos de cada botón.
+Transiciones suaves:
+Aplica transiciones (transition) para que los cambios de color y fondo sean agradables visualmente.

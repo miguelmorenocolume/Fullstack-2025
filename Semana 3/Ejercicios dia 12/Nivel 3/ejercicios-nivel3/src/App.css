@@ -1,0 +1,67 @@
+:root {
+  --bg-light: #f0f0f0;
+  --bg-dark: #121212;
+  --text-light: #111;
+  --text-dark: #f5f5f5;
+
+  --primary: #4caf50;
+  --danger: #f44336;
+  --toggle-light: #ddd;
+  --toggle-dark: #333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 2rem;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.light {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.button {
+  padding: 0.7rem 1.2rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.increase {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.decrease {
+  background-color: var(--danger);
+  color: #fff;
+}
+
+.toggle-light {
+  background-color: var(--toggle-light);
+  color: #000;
+}
+
+.toggle-dark {
+  background-color: var(--toggle-dark);
+  color: #fff;
+}
