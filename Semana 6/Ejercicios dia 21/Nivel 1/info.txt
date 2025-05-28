@@ -1,0 +1,6 @@
+Nivel 1: Operaciones básicas con archivos
+
+Crea un programa que escriba un mensaje en un archivo de texto.
+Lee el contenido de un archivo de texto y muéstralo en la consola.
+Elimina un archivo del sistema de archivos.
+Replica el ejemplo de los stream y pruébalo con al menos 3 ficheros de diferentes tamaños. Al menos uno debe ser muy grande.
