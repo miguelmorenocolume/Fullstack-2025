@@ -1,0 +1,8 @@
+Nivel 1: CRUD con Express.js y archivos CSV
+Crea un CRUD en Express.js para el objeto person, usando un archivo CSV como base de datos. Debe incluir los cinco endpoints: crear, leer, actualizar, borrar y listar. El sistema debe buscar y modificar la información en el archivo. Asegúrate de que los ID no se repitan.
+Campos del objeto person:
+Id
+Name
+Surname
+IsTeacher
+Birthdate

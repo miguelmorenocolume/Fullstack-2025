@@ -1,0 +1,7 @@
+Nivel 2: Segundo CRUD con CSV
+Crea un CRUD en Express.js para el objeto classroom, utilizando otro archivo CSV como almacenamiento.
+Campos del objeto classroom:
+Id
+Name
+Teacher_id (Id de una person)
+Students (Array de ids de person)
