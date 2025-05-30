@@ -1,0 +1,3 @@
+Nivel 1: Middlewares básicos en Express.js
+Crea un middleware que imprima en la consola la fecha y la URL de cada solicitud recibida.
+Crea un middleware que verifique si el usuario está autenticado mediante un token en los headers. Si no hay token, responde con un 403 Forbidden.
