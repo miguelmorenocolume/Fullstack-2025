@@ -1,0 +1,36 @@
+Objetivo
+
+Construir una aplicación web en React que permita a los usuarios gestionar una lista de tareas. La aplicación debe incluir navegación entre páginas, un sistema de almacenamiento global de tareas con useContext, formularios con useRef, y manejo de estado con useState.
+
+Requisitos
+
+1. Configuración y Rutas (React Router)
+Utilizar React Router para gestionar la navegación entre estas páginas. 
+La aplicación debe contar con las siguientes rutas:
+/                        →    Página principal con un listado de tareas.
+/new-task        →    Formulario para agregar una nueva tarea.
+/task/:id           →    Detalle de una tarea específica.
+2. Estado Global (useContext)
+Implementar un Context para almacenar las tareas y permitir su acceso desde cualquier parte de la aplicación.
+El contexto debe contener:
+Un array de tareas con id, titulo, descripcion, y completada (booleano).
+Funciones para agregar, eliminar y marcar tareas como completadas.
+
+3. Manejo de Formularios (useRef)
+El formulario en /new-task debe utilizar useRef para capturar los valores sin necesidad de un useState.
+Campos requeridos:
+Título (input de texto)
+Descripción (textarea)
+Botón de agregar tarea
+4. Manejo de Estado (useState)
+La lista de tareas en la página principal (/) debe manejar su propio estado local con useState, obteniendo los datos desde Context.
+Al completar o eliminar una tarea, el estado debe actualizarse en la UI.
+
+5. Detalles finales
+Agregar un botón para filtrar tareas completadas y no completadas.
+Guardar las tareas en localStorage para persistencia de datos.
+Agregar estilos con Tailwind CSS o Styled Components.
+
+6. Entrega
+Implementar la aplicación con vitejs + React + React Router + UseContext + useRef + useState
+Compartir el código en un repositorio de GitHub y adjuntar la url en el readme al subirlo.

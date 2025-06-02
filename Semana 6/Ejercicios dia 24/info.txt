@@ -1,0 +1,17 @@
+Nivel 1: Crear la aplicación cliente
+Crea una aplicación con React.
+Debe tener una interfaz básica que permita visualizar, agregar, editar y eliminar datos.
+
+Nivel 2: Crear la API en Express.js
+Crea una API con Express.js que soporte los siguientes endpoints REST:
+GET /items – Listar todos los elementos
+POST /items – Crear un nuevo elemento
+PUT /items/:id – Actualizar un elemento por ID
+DELETE /items/:id – Eliminar un elemento por ID
+
+Nivel 3: Conectar el cliente con la API
+Conecta la aplicación cliente con la API Express usando fetch o axios para realizar las operaciones:
+Mostrar la lista de elementos al cargar la página (GET)
+Crear un nuevo elemento con un formulario (POST)
+Editar un elemento existente (PUT)
+Eliminar un elemento (DELETE)
