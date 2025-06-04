@@ -1,0 +1,116 @@
+/* Estilos generales del body */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* Contenedor principal de la app */
+.app {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Título principal */
+h1 {
+  color: #8be9fd;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+}
+
+/* Contenedor de la galería de tarjetas */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  justify-content: center;
+}
+
+/* Estilos de cada tarjeta */
+.photo-card {
+  background: #2a2a3c;
+  padding: 1.25rem 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Efecto hover en las tarjetas */
+.photo-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+}
+
+/* Imagen dentro de cada tarjeta */
+.photo-card img {
+  width: 200px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px black);
+  margin-bottom: 1rem;
+}
+
+/* Nombre del Pokémon */
+.photo-card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #8be9fd;
+  text-transform: capitalize;
+}
+
+/* Texto descriptivo dentro de cada tarjeta */
+.photo-card p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #ccc;
+  width: 100%;
+  text-align: left;
+  padding-left: 0.5rem;
+  font-weight: 500;
+}
+
+/* Texto destacado dentro del párrafo */
+.photo-card p strong {
+  color: #50fa7b;
+  text-transform: capitalize;
+}
+
+/* Media queries para pantallas medianas */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .photo-card img {
+    width: 160px;
+    height: 100px;
+  }
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .app {
+    padding: 0;
+  }
+  .photo-card img {
+    width: 100%;
+    height: 80px;
+  }
+  body {
+    padding: 1rem 0.25rem;
+  }
+}
