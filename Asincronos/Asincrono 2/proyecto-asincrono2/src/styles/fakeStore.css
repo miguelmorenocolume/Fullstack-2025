@@ -1,0 +1,78 @@
+/* Contenedor principal de la tienda */
+.fake-store-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #181a20 60%, #23272f 100%);
+    min-height: 100vh;
+}
+
+/* Contenedor principal */
+.fake-store-container h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 2.2rem;
+    color: #f8e287;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+/* Tarjeta de producto */
+.fake-card {
+    width: 250px;
+    padding: 1.5rem 1rem;
+    border: 1px solid #2c2f36;
+    background: linear-gradient(120deg, #23272f 80%, #181a20 100%);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+    text-align: center;
+    color: #f1f1f1;
+    transition: transform 0.18s, box-shadow 0.18s;
+    cursor: pointer;
+}
+
+.fake-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(248, 226, 135, 0.12);
+    border-color: #f8e287;
+}
+
+.fake-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    background: #181a20;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+/* Título de la tarjeta */
+.fake-card h3 {
+    font-size: 1.15rem;
+    margin: 0.7rem 0 0.4rem 0;
+    color: #f8e287;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Precio de la tarjeta */
+.fake-card p {
+    font-weight: bold;
+    color: #f1f1f1;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .fake-store-container {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .fake-card {
+        width: 100%;
+        min-width: 0;
+    }
+}
