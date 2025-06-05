@@ -1,0 +1,11 @@
+id,name,age,email,city
+1,Ana García,28,ana.garcia@example.com,Madrid
+2,Carlos Pérez,34,carlos.perez@example.com,Barcelona
+3,María López,22,maria.lopez@example.com,Valencia
+4,Juan Martínez,45,juan.martinez@example.com,Sevilla
+5,Lucía Fernández,31,lucia.fernandez@example.com,Zaragoza
+6,Pedro Sánchez,27,pedro.sanchez@example.com,Málaga
+7,Elena Gómez,39,elena.gomez@example.com,Bilbao
+8,Miguel Torres,24,miguel.torres@example.com,Alicante
+9,Sofía Díaz,29,sofia.diaz@example.com,Córdoba
+10,David Ruiz,33,david.ruiz@example.com,Valladolid
