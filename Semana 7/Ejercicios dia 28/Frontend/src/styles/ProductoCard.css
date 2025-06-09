@@ -1,0 +1,61 @@
+.producto-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.producto-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.producto-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.producto-info p {
+  margin: 0.2rem 0;
+  color: #4b5563;
+}
+
+.producto-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.producto-actions button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.producto-actions button:nth-child(1) {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.producto-actions button:nth-child(2) {
+  background-color: #fbbf24;
+  color: white;
+}
+
+.producto-actions button.eliminar {
+  background-color: #ef4444;
+  color: white;
+}
+
+.producto-actions button:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,59 @@
+.producto-detalle {
+  background-color: #fff;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937;
+}
+
+.producto-titulo {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #111827;
+  font-weight: 700;
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 0.5rem;
+}
+
+.producto-detalle p {
+  font-size: 1.1rem;
+  margin: 0.7rem 0;
+  line-height: 1.4;
+}
+
+.precio {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.btn-volver {
+  margin-top: 2rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: #2563eb;
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+  color: #6b7280;
+}
+
+.error {
+  color: #ef4444;
+}
