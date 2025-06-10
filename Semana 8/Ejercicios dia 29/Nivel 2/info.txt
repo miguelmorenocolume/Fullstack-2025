@@ -1,0 +1,5 @@
+Nivel 2: Navegación y componentes
+Añade un menú con enlaces a las páginas Home y About usando el componente Link de Next.js.
+Crea un componente Header que se muestre en todas las páginas.
+Usa useRouter() para mostrar el nombre de la ruta actual en cada página.
+Crea una carpeta components y mueve ahí el Header.

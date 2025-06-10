@@ -1,0 +1,4 @@
+Crea un nuevo proyecto de Next.js usando npx create-next-app.
+Inicia el servidor de desarrollo con npm run dev y verifica que la app funciona en http://localhost:3000.
+Modifica la página principal (pages/index.js) para que muestre un encabezado con tu nombre.
+Crea una nueva página llamada about.js en la carpeta pages, que diga "Esta es la página sobre mí".

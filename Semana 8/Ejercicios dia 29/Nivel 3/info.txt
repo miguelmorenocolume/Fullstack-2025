@@ -1,0 +1,5 @@
+Nivel 3: Props y datos estáticos
+Crea un archivo data.js con una lista de objetos que representen artículos (con título y descripción).
+Crea una página blog.js que muestre todos los artículos usando .map().
+Crea un componente ArticleCard para mostrar cada artículo.
+Usa getStaticProps() en blog.js para pasar los datos como props.
