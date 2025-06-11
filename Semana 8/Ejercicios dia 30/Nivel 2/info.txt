@@ -1,0 +1,5 @@
+Nivel 2: Navegación avanzada con useRouter() y rutas dinámicas
+En el proyecto, crea una página dinámica [id].js dentro de la carpeta pages/posts/ que reciba un parámetro id y lo muestre en pantalla.
+Desde la página principal, crea enlaces para navegar a tres posts diferentes, por ejemplo /posts/1, /posts/2 y /posts/3.
+Añade un botón en la página principal que use useRouter() para navegar programáticamente al post con id 1.
+Crea una ruta anidada, por ejemplo pages/blog/[category]/[post].js que muestre la categoría y el post recibidos en la URL.

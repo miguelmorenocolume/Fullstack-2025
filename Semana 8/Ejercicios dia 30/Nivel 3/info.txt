@@ -1,0 +1,6 @@
+Nivel 3: Uso de layouts y rutas anidadas avanzadas
+Crea un componente Layout que incluya un encabezado con un menú de navegación común.
+Aplica el layout a todas las páginas del proyecto para que compartan el mismo diseño.
+Añade una página de perfil de usuario con ruta dinámica pages/user/[username].js.
+Modifica el layout para que muestre un contenido específico cuando se está en la ruta de perfil (por ejemplo, mostrar el nombre del usuario en el encabezado).
+Crea rutas anidadas dentro de pages/dashboard/ que tengan subpáginas, por ejemplo pages/dashboard/settings.js y pages/dashboard/stats.js, y que todas usen el mismo layout especial para dashboard.

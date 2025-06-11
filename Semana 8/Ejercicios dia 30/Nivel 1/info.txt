@@ -1,0 +1,5 @@
+Nivel 1: Creación de páginas y rutas básicas en Next.js
+Crea un proyecto Next.js nuevo.
+Añade dos páginas simples: index.js (Home) y about.js (Acerca de).
+Desde la página principal (index.js), crea enlaces con <Link> para navegar a la página about.js y viceversa.
+Asegúrate de que al hacer clic en los enlaces, se navegue sin recargar la página.
