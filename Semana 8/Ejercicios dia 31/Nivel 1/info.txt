@@ -1,0 +1,4 @@
+Nivel 1 — Fundamentos básicos
+Crea una API Route sencill. En /pages/api/saludo.js, crea un endpoint que devuelva { mensaje: "Hola desde la API" }.
+Consume esta API desde un componente. En una página, usa fetch() en useEffect para llamar a /api/saludo y muestra el mensaje en pantalla.
+Crea una API que devuelva un número aleatorio. En /api/numero, responde con { numero: Math.random() }. Muéstralo al cargar la página.

@@ -1,0 +1,11 @@
+Nivel 3 — Lógica más avanzada y práctica
+Crea un CRUD básico en la API con un array en memoria
+GET: devuelve la lista
+POST: añade un nuevo nombre
+DELETE: elimina por índice o id simple
+Haz un componente React que use los métodos GET, POST y DELETE
+Lista de nombres
+Formulario para añadir
+Botón para eliminar por cada nombre
+Separa la lógica de acceso a datos
+Mueve la lógica de almacenamiento (aunque sea temporal) a un carpeta aparte (models) y accede desde ahí en las rutas de la API.

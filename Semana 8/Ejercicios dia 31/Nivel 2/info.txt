@@ -1,0 +1,4 @@
+Nivel 2 — Entrada de datos y actualización en tiempo real
+API que reciba datos por POST. En /api/nombres, guarda nombres enviados en req.body y responde con { recibido: true }.
+Formulario en un componente que use POST. Crea un formulario con un input y botón. Al enviar, manda el nombre a /api/nombres con fetch() y muestra un mensaje de éxito.
+API que devuelva una lista de elementos. Simula una lista (en memoria) de nombres que puedas consultar con GET.
