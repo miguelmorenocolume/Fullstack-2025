@@ -1,0 +1,5 @@
+{
+  "port": 80,
+  "dbUri": "mongodb+srv://admin:admin@cluster0.oqyfvty.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  "envName": "production"
+}
