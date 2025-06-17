@@ -1,0 +1,33 @@
+Nivel 1 — Proyecto básico y CRUD con API Routes
+Crea un proyecto Next.js básico
+Inicializa un proyecto con npx create-next-app.
+Crea una página principal con un título y texto simple.
+Implementa un CRUD básico usando API Routes con datos en memoria
+API para listar items (GET /api/items)
+API para crear item (POST /api/items)
+API para actualizar item (PUT /api/items/:id)
+API para borrar item (DELETE /api/items/:id)
+Haz una página para consumir estas APIs
+Mostrar lista de items
+Formulario para añadir un item
+Botón para eliminar y actualizar cada item
+Nivel 2 — Conexión con base de datos externa (MongoDB / Prisma)
+Configura una base de datos en MongoDB Atlas o PostgreSQL
+Crea cuenta y base de datos (MongoDB Atlas / Prisma con PostgreSQL)
+Añade la conexión en variables de entorno (.env.local)
+Modifica las API Routes para usar la base de datos externa
+Reemplaza la lista en memoria por consultas a la DB (con Mongoose o Prisma)
+Implementa las funciones CRUD usando la base de datos
+Actualiza el frontend para que siga funcionando igual, con los datos reales
+
+Nivel 3 — Mejoras y despliegue en Vercel
+Añade validación y manejo de errores en las API Routes
+Valida campos de entrada y devuelve errores amigables
+Maneja errores de conexión o de la base de datos
+Crea una interfaz más amigable con loading y mensajes de error
+Muestra estados de carga mientras espera la respuesta
+Muestra mensajes de éxito o error tras operaciones CRUD
+Despliega la aplicación en Vercel
+Crea cuenta en Vercel y conecta tu repositorio
+Configura variables de entorno en Vercel para la DB
+Despliega y prueba que todo funciona online
