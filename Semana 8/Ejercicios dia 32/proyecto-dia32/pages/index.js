@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   const [items, setItems] = useState([]);
@@ -74,34 +75,62 @@ export default function Home() {
   };
 
   return (
-    <div style={{ padding: '1rem' }}>
-      <h1>CRUD con Next.js y MongoDB</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Aplicación de Productos</h1>
 
-      <form onSubmit={handleSubmit} style={{ marginBottom: '1rem' }}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <input
+          className={styles.input}
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Nombre del item"
           required
         />
-        <button type="submit" disabled={loading}>
+        <button
+          type="submit"
+          disabled={loading}
+          className={`${styles.button} ${styles.submit}`}
+        >
           {editing ? 'Actualizar' : 'Agregar'}
         </button>
-        {editing && <button onClick={() => { setEditing(null); setName(''); }} type="button">Cancelar</button>}
+        {editing && (
+          <button
+            type="button"
+            className={`${styles.button} ${styles.cancel}`}
+            onClick={() => {
+              setEditing(null);
+              setName('');
+            }}
+          >
+            Cancelar
+          </button>
+        )}
       </form>
 
-      {message && <p>{message}</p>}
-      {loading && <p>Cargando...</p>}
+      {message && <p className={styles.message}>{message}</p>}
+      {loading && <p className={styles.message}>Cargando...</p>}
 
-      <ul>
+      <div className={styles.grid}>
         {items.map((item) => (
-          <li key={item._id}>
-            {item.name}
-            <button onClick={() => startEdit(item)}>Editar</button>
-            <button onClick={() => handleDelete(item._id)}>Eliminar</button>
-          </li>
+          <div key={item._id} className={styles.card}>
+            <div className={styles.cardTitle}>{item.name}</div>
+            <div className={styles.cardButtons}>
+              <button
+                className={`${styles.button} ${styles.edit}`}
+                onClick={() => startEdit(item)}
+              >
+                Editar
+              </button>
+              <button
+                className={`${styles.button} ${styles.delete}`}
+                onClick={() => handleDelete(item._id)}
+              >
+                Eliminar
+              </button>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

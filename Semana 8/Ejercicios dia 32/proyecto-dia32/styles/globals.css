@@ -1,42 +1,67 @@
+/* global.css */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  --text-color: #2c3e50;
+  --background-color: #f4f6f8;
+  --primary-color: #3498db;
+  --danger-color: #e74c3c;
+  --warning-color: #f39c12;
+  --neutral-light: #ffffff;
+  --neutral-dark: #333;
+  --border-radius: 8px;
+  --transition: 0.2s ease-in-out;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html,
+/* Estilos generales */
 body {
-  max-width: 100vw;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Mejora legibilidad de inputs y botones */
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+button {
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+button:active {
+  transform: scale(0.98);
 }
 
 a {
-  color: inherit;
+  color: var(--primary-color);
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+a:hover {
+  text-decoration: underline;
+}
+
+/* Scrollbar más estética (opcional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
