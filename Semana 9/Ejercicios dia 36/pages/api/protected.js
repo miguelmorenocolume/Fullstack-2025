@@ -1,8 +1,10 @@
 import { verifyToken } from '@/lib/auth';
 
-export default async function handler(req, res) {
-  const user = verifyToken(req, res);
-  if (!user) return;
-
-  res.json({ message: 'Contenido protegido', user });
+export default function handler(req, res) {
+  try {
+    const decoded = verifyToken(req);
+    res.status(200).json({ message: 'Acceso permitido', user: decoded });
+  } catch (err) {
+    res.status(401).json({ message: 'Token inválido o ausente' });
+  }
 }

@@ -1,98 +1,128 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { AuthContext } from '@/context/AuthContext';
 
 export default function LoginPage() {
-  // Estados Login
-  const [emailLogin, setEmailLogin] = useState('');
-  const [passwordLogin, setPasswordLogin] = useState('');
-  const { login } = useContext(AuthContext);
+  const [form, setForm] = useState({ email: '', password: '' });
+  const [message, setMessage] = useState('');
   const router = useRouter();
 
-  // Estados Registro
-  const [emailRegister, setEmailRegister] = useState('');
-  const [passwordRegister, setPasswordRegister] = useState('');
-  const [registerMessage, setRegisterMessage] = useState('');
+  const handleChange = e =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
-  // Manejador Login
-  const handleLogin = async e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    const success = await login(emailLogin, passwordLogin);
-    if (success) {
-      router.push('/dashboard');
-    } else {
-      alert('Credenciales incorrectas');
-    }
-  };
-
-  // Manejador Registro
-  const handleRegister = async e => {
-    e.preventDefault();
-    setRegisterMessage('Registrando...');
-
-    const res = await fetch('/api/register', {
+    const res = await fetch('/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: emailRegister, password: passwordRegister }),
+      body: JSON.stringify(form),
     });
 
     const data = await res.json();
-
     if (res.ok) {
-      setRegisterMessage('Registro exitoso, ya puedes iniciar sesión');
-      setEmailRegister('');
-      setPasswordRegister('');
+      localStorage.setItem('token', data.token);
+      router.push('/dashboard');
     } else {
-      setRegisterMessage(data.error || 'Error en el registro');
+      setMessage(data.message);
     }
   };
 
   return (
-    <div>
-      <h1>Iniciar sesión</h1>
-      <form onSubmit={handleLogin}>
+    <div className="container">
+      <h2>Iniciar Sesión</h2>
+      <form onSubmit={handleSubmit}>
         <input
+          name="email"
           type="email"
-          placeholder="Correo"
-          value={emailLogin}
-          onChange={e => setEmailLogin(e.target.value)}
+          placeholder="Correo electrónico"
+          onChange={handleChange}
           required
         />
-        <br />
         <input
+          name="password"
           type="password"
           placeholder="Contraseña"
-          value={passwordLogin}
-          onChange={e => setPasswordLogin(e.target.value)}
+          onChange={handleChange}
           required
         />
-        <br />
         <button type="submit">Entrar</button>
       </form>
+      {message && <p className="error">{message}</p>}
+      <p className="link">
+        ¿No tienes cuenta? <a href="/register">Regístrate</a>
+      </p>
 
-      <hr />
+      <style jsx>{`
+        .container {
+          max-width: 400px;
+          margin: 4rem auto;
+          padding: 2rem;
+          background: #fff;
+          border: 1px solid #e5e7eb;
+          border-radius: 12px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
 
-      <h2>Registrarse</h2>
-      <form onSubmit={handleRegister}>
-        <input
-          type="email"
-          placeholder="Correo"
-          value={emailRegister}
-          onChange={e => setEmailRegister(e.target.value)}
-          required
-        />
-        <br />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={passwordRegister}
-          onChange={e => setPasswordRegister(e.target.value)}
-          required
-        />
-        <br />
-        <button type="submit">Registrar</button>
-      </form>
-      {registerMessage && <p>{registerMessage}</p>}
+        h2 {
+          margin-bottom: 1.5rem;
+          text-align: center;
+          color: #111827;
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        input {
+          padding: 0.75rem;
+          border: 1px solid #d1d5db;
+          border-radius: 8px;
+          font-size: 1rem;
+          transition: border-color 0.3s;
+        }
+
+        input:focus {
+          border-color: #2563eb;
+          outline: none;
+        }
+
+        button {
+          background-color: #2563eb;
+          color: white;
+          padding: 0.75rem;
+          border: none;
+          border-radius: 8px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+
+        button:hover {
+          background-color: #1e40af;
+        }
+
+        .error {
+          color: #dc2626;
+          text-align: center;
+          margin-top: 1rem;
+        }
+
+        .link {
+          text-align: center;
+          margin-top: 1.5rem;
+          color: #6b7280;
+        }
+
+        .link a {
+          color: #2563eb;
+          text-decoration: none;
+        }
+
+        .link a:hover {
+          text-decoration: underline;
+        }
+      `}</style>
     </div>
   );
 }
