@@ -1,24 +1,31 @@
 import jwt from 'jsonwebtoken';
 
 const authMiddleware = (req, res, next) => {
-  const authHeader = req.headers.authorization;
-  console.log('Auth Header:', authHeader);  // Log para verificar el header
-
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return res.status(401).json({ message: 'No autorizado, token faltante o mal formado' });
-  }
-
-  const token = authHeader.split(' ')[1];
-  console.log('Token recibido:', token);  // Log para verificar token
-
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log('Token decodificado:', decoded);  // Log para verificar contenido token
+    const authHeader = req.headers.authorization;
+    if (!authHeader) {
+      console.log('authMiddleware - No hay header de autorización');
+      return res.status(401).json({ message: 'No autorizado, falta token' });
+    }
 
-    req.user = decoded;
+    const token = authHeader.split(' ')[1]; // Espera formato "Bearer token"
+
+    if (!token) {
+      console.log('authMiddleware - Token no encontrado en header');
+      return res.status(401).json({ message: 'No autorizado, falta token' });
+    }
+
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    if (!decoded || !decoded.id) {
+      console.log('authMiddleware - Token inválido o sin id');
+      return res.status(401).json({ message: 'Token inválido' });
+    }
+
+    req.user = { userId: decoded.id };
     next();
   } catch (error) {
-    console.error('Error en authMiddleware:', error.message);
+    console.error('authMiddleware - Error verificando token:', error.message);
     return res.status(401).json({ message: 'Token inválido o expirado' });
   }
 };
