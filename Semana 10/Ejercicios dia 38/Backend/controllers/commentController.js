@@ -1,81 +1,81 @@
 import Comment from '../models/Comment.js';
-import Post from '../models/Post.js';
 
+// Crear comentario (protegido)
 export const createComment = async (req, res) => {
+  const { content, postId } = req.body;
+
+  if (!content || !postId) {
+    return res.status(400).json({ message: 'Contenido y postId requeridos' });
+  }
+
   try {
-    const { postId, content } = req.body;
-    const userId = req.user.userId;
-
-    if (!postId || !content)
-      return res.status(400).json({ message: 'Contenido y postId son obligatorios' });
-
-    const post = await Post.findById(postId);
-    if (!post) return res.status(404).json({ message: 'Publicación no encontrada' });
-
-    const newComment = new Comment({
+    const comment = await Comment.create({
       content,
-      author: userId,
+      author: req.user._id,
       post: postId,
-      createdAt: new Date(),
     });
 
-    await newComment.save();
-
-    post.comments.push(newComment._id);
-    await post.save();
-
-    res.status(201).json({ message: 'Comentario creado', comment: newComment });
+    res.status(201).json(comment);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Error en el servidor' });
+    res.status(500).json({ message: error.message });
   }
 };
 
+// Obtener comentarios de un post (público)
+export const getCommentsByPost = async (req, res) => {
+  const { postId } = req.params;
+
+  try {
+    const comments = await Comment.find({ post: postId })
+      .populate('author', 'username')
+      .sort({ createdAt: -1 });
+
+    res.json(comments);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// Editar comentario (solo autor)
 export const updateComment = async (req, res) => {
+  const { commentId } = req.params;
+  const { content } = req.body;
+
   try {
-    const { commentId, content } = req.body;
-    const userId = req.user.userId;
-
-    if (!commentId || !content)
-      return res.status(400).json({ message: 'Datos incompletos' });
-
     const comment = await Comment.findById(commentId);
+
     if (!comment) return res.status(404).json({ message: 'Comentario no encontrado' });
 
-    if (comment.author.toString() !== userId)
-      return res.status(403).json({ message: 'No autorizado para editar este comentario' });
+    if (comment.author.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ message: 'No autorizado' });
+    }
 
-    comment.content = content;
-    comment.updatedAt = new Date();
-
+    comment.content = content || comment.content;
     await comment.save();
-    res.status(200).json({ message: 'Comentario actualizado', comment });
+
+    res.json(comment);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Error en el servidor' });
+    res.status(500).json({ message: error.message });
   }
 };
 
+// Eliminar comentario (solo autor)
 export const deleteComment = async (req, res) => {
+  const { commentId } = req.params;
+
   try {
-    const { commentId } = req.body;
-    const userId = req.user.userId;
-
-    if (!commentId)
-      return res.status(400).json({ message: 'commentId es obligatorio' });
-
     const comment = await Comment.findById(commentId);
+
     if (!comment) return res.status(404).json({ message: 'Comentario no encontrado' });
 
-    if (comment.author.toString() !== userId)
-      return res.status(403).json({ message: 'No autorizado para eliminar este comentario' });
+    if (comment.author.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ message: 'No autorizado' });
+    }
 
-    await Post.findByIdAndUpdate(comment.post, { $pull: { comments: comment._id } });
-    await Comment.findByIdAndDelete(commentId);
+    await comment.deleteOne();
 
-    res.status(200).json({ message: 'Comentario eliminado' });
+    res.json({ message: 'Comentario eliminado' });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Error en el servidor' });
+    res.status(500).json({ message: error.message });
   }
 };

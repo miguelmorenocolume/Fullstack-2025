@@ -1,118 +1,139 @@
+import mongoose from 'mongoose';
 import Post from '../models/Post.js';
 
+// Crear post (requiere token)
 export const createPost = async (req, res) => {
+  const { title, content, image } = req.body;
+
+  if (!title || !content || !image) {
+    return res.status(400).json({ message: 'Todos los campos son obligatorios' });
+  }
+
   try {
-    console.log('createPost - req.user:', req.user);
-    const { title, content, image } = req.body;
-    const userId = req.user?.userId;
-
-    if (!userId) {
-      console.log('createPost - No userId en req.user');
-      return res.status(401).json({ message: 'No autorizado, falta userId' });
-    }
-
-    if (!title || !content || !image) {
-      console.log('createPost - Datos incompletos:', { title, content, image });
-      return res.status(400).json({ message: 'Título, contenido e imagen son obligatorios' });
-    }
-
-    const newPost = new Post({
+    const post = await Post.create({
       title,
       content,
       image,
-      author: userId,
+      author: req.user._id
     });
 
-    await newPost.save();
-    res.status(201).json({ message: 'Publicación creada', post: newPost });
+    res.status(201).json(post);
   } catch (error) {
-    console.error('Error en createPost:', error);
-    res.status(500).json({ message: 'Error en el servidor', error: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 
-export const getPosts = async (req, res) => {
+// Obtener todos los posts (público)
+export const getAllPosts = async (req, res) => {
   try {
-    console.log('getPosts - solicitud recibida');
-    const posts = await Post.find().sort({ createdAt: -1 });
-    res.status(200).json(posts);
+    const posts = await Post.find()
+      .populate('author', 'username')
+      .sort({ createdAt: -1 });
+
+    res.json(posts);
   } catch (error) {
-    console.error('Error en getPosts:', error);
-    res.status(500).json({ message: 'Error en el servidor', error: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 
+// Editar post (solo si es del autor)
 export const updatePost = async (req, res) => {
+  const { postId } = req.params;
+  const { title, content, image } = req.body;
+
   try {
-    console.log('updatePost - req.user:', req.user);
-    const { postId, title, content, image } = req.body;
-    const userId = req.user?.userId;
-
-    if (!userId) {
-      console.log('updatePost - No userId en req.user');
-      return res.status(401).json({ message: 'No autorizado, falta userId' });
-    }
-
-    if (!postId || !title || !content || !image) {
-      console.log('updatePost - Datos incompletos:', { postId, title, content, image });
-      return res.status(400).json({ message: 'Datos incompletos' });
-    }
-
     const post = await Post.findById(postId);
-    if (!post) {
-      console.log('updatePost - Post no encontrado:', postId);
-      return res.status(404).json({ message: 'Publicación no encontrada' });
+
+    if (!post) return res.status(404).json({ message: 'Post no encontrado' });
+
+    if (post.author.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ message: 'No autorizado para editar este post' });
     }
 
-    if (post.author.toString() !== userId) {
-      console.log('updatePost - Usuario no autorizado para editar:', { postAuthor: post.author.toString(), userId });
-      return res.status(403).json({ message: 'No autorizado para editar esta publicación' });
-    }
-
-    post.title = title;
-    post.content = content;
-    post.image = image;
-    post.updatedAt = new Date();
+    post.title = title || post.title;
+    post.content = content || post.content;
+    post.image = image || post.image;
 
     await post.save();
-    res.status(200).json({ message: 'Publicación actualizada', post });
+
+    res.json(post);
   } catch (error) {
-    console.error('Error en updatePost:', error);
-    res.status(500).json({ message: 'Error en el servidor', error: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 
+// Eliminar post (solo si es del autor)
 export const deletePost = async (req, res) => {
+  const { postId } = req.params;
+
   try {
-    console.log('deletePost - req.user:', req.user);
-    const { postId } = req.body;
-    const userId = req.user?.userId;
-
-    if (!userId) {
-      console.log('deletePost - No userId en req.user');
-      return res.status(401).json({ message: 'No autorizado, falta userId' });
-    }
-
-    if (!postId) {
-      console.log('deletePost - Falta postId en body');
-      return res.status(400).json({ message: 'postId es obligatorio' });
-    }
-
     const post = await Post.findById(postId);
-    if (!post) {
-      console.log('deletePost - Post no encontrado:', postId);
-      return res.status(404).json({ message: 'Publicación no encontrada' });
+
+    if (!post) return res.status(404).json({ message: 'Post no encontrado' });
+
+    if (post.author.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ message: 'No autorizado para eliminar este post' });
     }
 
-    if (post.author.toString() !== userId) {
-      console.log('deletePost - Usuario no autorizado para eliminar:', { postAuthor: post.author.toString(), userId });
-      return res.status(403).json({ message: 'No autorizado para eliminar esta publicación' });
-    }
+    await post.deleteOne();
 
-    await Post.findByIdAndDelete(postId);
-    res.status(200).json({ message: 'Publicación eliminada' });
+    res.json({ message: 'Post eliminado correctamente' });
   } catch (error) {
-    console.error('Error en deletePost:', error);
-    res.status(500).json({ message: 'Error en el servidor', error: error.message });
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// Obtener un post por ID (público)
+export const getPostById = async (req, res) => {
+  const { postId } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(postId)) {
+    return res.status(400).json({ message: 'ID de post inválido' });
+  }
+
+  try {
+    const post = await Post.findById(postId)
+      .populate('author', 'username')
+      .populate('comments.author', 'username');  // popular autor de comentarios
+
+    if (!post) return res.status(404).json({ message: 'Post no encontrado' });
+
+    res.json(post);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// Añadir comentario a un post (requiere token)
+export const addComment = async (req, res) => {
+  const { postId } = req.params;
+  const { text } = req.body;
+
+  if (!text) return res.status(400).json({ message: 'El texto del comentario es obligatorio' });
+
+  if (!mongoose.Types.ObjectId.isValid(postId)) {
+    return res.status(400).json({ message: 'ID de post inválido' });
+  }
+
+  try {
+    const post = await Post.findById(postId);
+
+    if (!post) return res.status(404).json({ message: 'Post no encontrado' });
+
+    post.comments.push({
+      text,
+      author: req.user._id,
+    });
+
+    await post.save();
+
+    const index = post.comments.length - 1;
+    await post.populate(`comments.${index}.author`, 'username');
+
+    const newComment = post.comments[index];
+
+    res.status(201).json(newComment);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 };

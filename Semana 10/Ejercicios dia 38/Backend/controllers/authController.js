@@ -1,49 +1,60 @@
 import User from '../models/User.js';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+import generateToken from '../utils/generateToken.js';
 
+// Registro
 export const registerUser = async (req, res) => {
   const { username, email, password } = req.body;
 
+  // Validación simple
   if (!username || !email || !password) {
-    return res.status(400).json({ message: 'Todos los campos son obligatorios' });
+    return res.status(400).json({ message: 'Por favor, completa todos los campos' });
   }
-
-  const userExists = await User.findOne({ email });
-  if (userExists) {
-    return res.status(400).json({ message: 'Usuario ya registrado' });
-  }
-
-  const user = new User({ username, email, password });
 
   try {
-    await user.save();
-    res.status(201).json({ message: 'Usuario registrado correctamente' });
+    // Comprobar si el usuario existe
+    const userExists = await User.findOne({ email });
+    if (userExists) {
+      return res.status(400).json({ message: 'El usuario ya existe' });
+    }
+
+    // Crear usuario
+    const user = await User.create({ username, email, password });
+
+    if (user) {
+      res.status(201).json({
+        _id: user._id,
+        username: user.username,
+        email: user.email,
+        token: generateToken(user._id),
+      });
+    } else {
+      res.status(400).json({ message: 'Datos inválidos' });
+    }
   } catch (error) {
-    res.status(500).json({ message: 'Error al registrar usuario', error });
+    res.status(500).json({ message: error.message });
   }
 };
 
+// Login
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
-  if (!email || !password) {
-    return res.status(400).json({ message: 'Todos los campos son obligatorios' });
+  try {
+    const user = await User.findOne({ email });
+
+    if (user && (await user.matchPassword(password))) {
+      res.json({
+        user: {
+          _id: user._id,
+          username: user.username,
+          email: user.email
+        },
+        token: generateToken(user._id)
+      });
+    } else {
+      res.status(401).json({ message: 'Email o contraseña incorrectos' });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
-
-  const user = await User.findOne({ email });
-  if (!user) {
-    return res.status(400).json({ message: 'Usuario no encontrado' });
-  }
-
-  const isMatch = await bcrypt.compare(password, user.password);
-  if (!isMatch) {
-    return res.status(400).json({ message: 'Contraseña incorrecta' });
-  }
-
-  const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-    expiresIn: '1h',
-  });
-
-  res.status(200).json({ token });
 };
