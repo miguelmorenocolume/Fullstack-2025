@@ -9,9 +9,9 @@ import protect from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-router.get('/:postId', getCommentsByPost); // Público
-router.post('/', protect, createComment); // Crear (autenticado)
-router.put('/:commentId', protect, updateComment); // Editar (autenticado y autor)
-router.delete('/:commentId', protect, deleteComment); // Eliminar (autenticado y autor)
+router.get('/:postId', getCommentsByPost);
+router.post('/', protect, createComment);
+router.put('/:commentId', protect, updateComment);
+router.delete('/:commentId', protect, deleteComment);
 
 export default router;

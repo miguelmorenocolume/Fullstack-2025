@@ -110,7 +110,6 @@ const PostDetails = () => {
         />
       )}
 
-      {/* Contenido con saltos de línea */}
       <p
         style={{
           fontSize: '1.1rem',

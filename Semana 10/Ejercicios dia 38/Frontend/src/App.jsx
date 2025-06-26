@@ -6,7 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import PostDetails from './pages/PostDetails';
-import "./App.css"; // Asegúrate de tener un archivo CSS para estilos globales
+import "./App.css";
 
 // Layout para ocultar el navbar en login/registro
 const Layout = ({ children }) => {

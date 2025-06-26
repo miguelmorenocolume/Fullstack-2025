@@ -94,7 +94,7 @@ export const getPostById = async (req, res) => {
   try {
     const post = await Post.findById(postId)
       .populate('author', 'username')
-      .populate('comments.author', 'username');  // popular autor de comentarios
+      .populate('comments.author', 'username');
 
     if (!post) return res.status(404).json({ message: 'Post no encontrado' });
 

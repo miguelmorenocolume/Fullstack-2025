@@ -1,6 +1,6 @@
 import express from 'express';
 import { registerUser, loginUser } from '../controllers/authController.js';
-import protect from '../middleware/authMiddleware.js'; // tu middleware para proteger rutas
+import protect from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
@@ -10,10 +10,7 @@ router.post('/login', loginUser);
 // Ruta para obtener el usuario actual (requiere token)
 router.get('/me', protect, async (req, res) => {
   try {
-    // req.user ya viene de tu middleware protect con el id del usuario
-    const user = await req.user; // Si req.user ya tiene el usuario completo
-    // Si req.user es solo el id, debes buscar el usuario en la DB:
-    // const user = await User.findById(req.user._id).select('-password');
+    const user = await req.user;
     
     if (!user) {
       return res.status(404).json({ message: 'Usuario no encontrado' });

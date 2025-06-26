@@ -20,7 +20,7 @@ const postSchema = new mongoose.Schema({
     trim: true,
   },
   image: {
-    type: String, // base64
+    type: String,
     required: true,
   },
   content: {
@@ -32,7 +32,7 @@ const postSchema = new mongoose.Schema({
     ref: 'User',
     required: true,
   },
-  comments: [commentSchema]  // <-- Aquí añadimos comentarios
+  comments: [commentSchema]
 }, {
   timestamps: true,
 });
